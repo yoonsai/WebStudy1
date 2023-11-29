@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="table.css">
+</head>
+<body>
+	<h3>로그인</h3>
+	<form> <!-- form + required 유효성 검사 => 입력안되면 안넘어가게 -->
+	<table class="table_content" width="250">
+		<tr>
+			<th width="20%" align="center">ID</th>
+			<td width="80%">
+				<input type="text" size="15" required>
+			</td>
+		</tr>
+		<tr>
+			<th width="20%" align="center">PW</th>
+			<td width="80%">
+				<input type="password" size="15" required>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" value="로그인">
+				<input type="button" value="취소">
+			</td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

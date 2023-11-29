@@ -1,0 +1,42 @@
+<!-- 
+	
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	input[value=java]{
+		background-color: red;
+	}
+	input[value=oracle]{
+		background-color: green;
+	}
+	input[value^="j"]{
+		background-color: pink; /*j로 시작하는 값*/
+	}
+	input[value*="a"]{  
+		background-color: rgb(64, 128, 128); /*a를 포함하는 값*/
+	}
+	input[value$="t"]{
+		background-color: cyan; /*t자로 끝나는 값*/
+	}
+	/*
+	   속성 선택자
+	   1. = 같은 값일때
+	   2. ^= 시작하는 문자열
+	   3. *= 포함
+	   4. $= 끝나는 문자열
+	*/
+</style>
+</head>
+<body>
+	<h1>속성 선택자</h1>
+	<input type="text" size="20" value="java"><br>
+	<input type="text" size="20" value="oracle"><br>
+	<input type="text" size="20" value="html"><br>
+	<input type="text" size="20" value="script"><br>
+	<input type="text" size="20" value="jsp"><br>
+</body>
+</html>

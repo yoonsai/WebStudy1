@@ -1,0 +1,60 @@
+<!--
+     후손 선택자 / 자손 선택자 / 인접 선택자 / 형제 선택자
+                                 =========================
+                                  <th><td>
+                           <dt><dd>
+         <div>
+          |
+     ================
+     |    |    |    |
+    <h1> <h2> <h3> <ul> => 자손 => div => h1
+                   |
+               ===========
+               |    |    |                                    
+              <li> <li> <li> ==> 후손 div li 
+                             
+   -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+   div > p~h1 {
+      color:red;
+   }
+   /*
+      div : p , h1 , h1 , ul ~은 형제 (모든 형제)
+    */
+    div > p+h1{
+       /* p태그 옆에 있는 태그 선택 (인접 형제) */
+       color: cyan;
+    }
+    div > ul > li {
+       color: yellow;
+    }
+    div > ul > li > ul > li{
+       color: blue;
+    }
+</style>
+
+</head>
+<body>
+   <div>
+      <p>교육과정</p>
+      <h1>Java</h1>
+      <h1>Oracle</h1>
+      <ul>
+         <li>HTML/CSS</li>
+         <li>JavaScript</li>
+         <li>
+            <ul>
+               <li>JSP/Servlet</li>
+               <li>Spring</li>
+               <li>AWS</li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!--
+	nth-child(2n) n(0~)=> 0,2,4,6
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	ul{
+		overflow: hidden;
+		/*overflow:auto, scroll*/
+	}
+	li{
+		list-style: none;
+		padding: 15px;
+		float: left; /*레이아웃*/
+	} 
+	li:nth-child(2n){
+		background-color: #ff000033;
+	}
+	li:nth-child(2n+1){
+		background-color: rgb(255, 128, 192);
+	}
+	li:first-child{
+		border-radius: 10px 0 0 10px;
+	}
+	li:last-child{
+		border-radius: 0 10px 10px 0;
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li>홈</li>
+		<li>회원</li>
+		<li>커뮤니티</li>
+		<li>공지사항</li>
+		<li>마이페이지</li>
+	</ul>
+</body>
+</html>
