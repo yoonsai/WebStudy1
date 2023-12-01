@@ -64,7 +64,7 @@ public class GoodsSpecialServlet extends HttpServlet {
 		{
 			   out.write("<div class=\"col-md-3\">");
 			   out.write("<div class=\"thumbnail\">");
-			   out.write("<a href=#>");
+			   out.write("<a href=MainServlet?mode=5&no="+vo.getNo()+"&type=2>");
 			   out.write("<img src="+vo.getPoster()+" alt=\"Lights\" style=\"width:100%\">");
 			   out.write("<div class=\"caption\">");
 			   out.write("<p>"+vo.getName()+"</p>");

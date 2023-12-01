@@ -65,7 +65,7 @@ public class GoodsAllServlet extends HttpServlet {
 			   out.write("<div class=\"caption\">");
 			   out.write("<p>"+vo.getName()+"</p>");
 			   out.write("</div>");
-			   out.write("</a>");
+			   out.write("</a>"); 
 			   out.write("</div>");
 			   out.write("</div>");
 		}
