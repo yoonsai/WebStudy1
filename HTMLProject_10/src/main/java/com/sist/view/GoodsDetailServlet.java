@@ -34,12 +34,29 @@ public class GoodsDetailServlet extends HttpServlet {
 		out.write("<html>");
 		out.write("<head>");
 		out.write("<link rel=\"stylesheet\" href=\"css/style.css\">");
-		out.write("<script type=text/javascript src=\"http://code.javascript\">");
+		out.write("<script type=text/javascript src=\"http://code.jquery.com/jquery.js\"></script>");
 		out.write("<script type=text/javascript>");
 		out.write("let i=0;");
-		// 자바 스크립트 => 자동 변환 함수 ==> let i=0 i:int
-		// let a="aaa"  a:String / let d=10.5 => d:double
-		// let o={} => o:Object, let k=[] k:Array
+		// 자바스크립트 => 자동 변환 변수 ==> let i=0  i:int
+		// let a="aaa"  a:String let d=10.5=> d:double 
+		// let o={} => o:Object , let k=[] k:Array
+		// var => scope 
+		out.write("$(function(){");
+		out.write("$('.ups').click(function(){");
+		out.write("$('.updates').hide();");
+		out.write("let a=$(this).attr('data-no');");
+		out.write("if(i==0){");
+		out.write("$('#m'+a).show();");
+		out.write("$(this).text('취소');");
+		out.write("i=1;");
+		out.write("}else{");
+		out.write("$('#m'+a).hide();");
+		out.write("$(this).text('수정');");
+		out.write("i=0;");
+		out.write("}");
+		out.write("})");
+		out.write("})");
+		out.write("</script>");
 		out.write("</head>");
 		out.write("<body>");
 		String html="<div class=\"row\">"
@@ -108,53 +125,54 @@ public class GoodsDetailServlet extends HttpServlet {
 		out.write("<div style=\"height:30px\"><div>");
 		out.write("<div class=row>");
 		// 댓글 출력
-		out.write("<table class=table>");
-		out.write("<tr>");
-		out.write("<td>");
-		ReplyDAO rdao=ReplyDAO.newInstance();
-		List<ReplyVO> list=rdao.replyListData(Integer.parseInt(type),Integer.parseInt(no));
-		HttpSession session=request.getSession();
-		String id=(String)session.getAttribute("id"); //session.getAttribute("id")=>오브젝트라 형변환을 해줘야함
-		for(ReplyVO rvo:list)
-		{
-			out.write("<table class=table>");
-			out.write("<tr>");
-			out.write("<td class=text-left>");
-			out.write("◑"+rvo.getName()+"&nbsp;("+rvo.getDbday()+")");
-			out.write("</td>");
-			out.write("<td class=text-right>");
-			if(rvo.getId().equals(id)) // 본인이면 수정 삭제 가능
-			{
-				out.write("<span class=\"btn btn=-xs btn-success\" data-no="+rvo.getRno()+">수정</span>&nbsp;");
-				out.write("<a href=ReplyDeleteServlet?rno="+rvo.getRno()+"&type="+type+"&no="+no+" class=\"btn btn=-xs btn-info\">삭제</a>");
-			}
-			out.write("</td>");
-			out.write("</tr>");
-			
-			out.write("<tr>");
-			//댓글 내용
-			out.write("<td colspan=2>");
-			out.write("<pre style=\"white-space:pre-wrap;background-color:white;border:none\">"+rvo.getMsg()+"</pre>");
-			out.write("</td>");
-			out.write("</tr>");
-			out.write("<tr id=m"+rvo.getRno()+" class=updates style=\"display:none\">");
-			out.write("<td colspan=2>");
-			
-			out.write("<form method=post action=ReplyUpdateServlet>");
-			out.write("<input type=hidden name=gno value="+no+">");
-			out.write("<input type=hidden name=typeno value="+type+">");
-			out.write("<textarea name=msg rows=4 cols=60 style=\"float:left\">"+rvo.getMsg()+"</textarea>");
-			out.write("<input type=submit value=\"댓글 수정\" style=\"width:100px;height:85px;background-color:blue;color:white\">"); // 공백이 들어가거나 문장이 길어지면 무조건 따음표 쓰기
-			out.write("</form>");
-			// 처리하는 서블릿(JSP) / 화면 출력 서블릿(JSP)
-			// => 화면이 없는 (HTML) => 자체에서 처리 
-			out.write("</td>");
-			out.write("</tr>");
-			out.write("</table>");
-		}
-		out.write("</td>");
-		out.write("</tr>");
-		out.write("</table>");
+				out.write("<table class=table>");
+				out.write("<tr>");
+				out.write("<td>");
+				ReplyDAO rdao=ReplyDAO.newInstance();
+				List<ReplyVO> list=rdao.replyListData(Integer.parseInt(type),Integer.parseInt(no));
+				HttpSession session=request.getSession();
+				String id=(String)session.getAttribute("id");
+				for(ReplyVO rvo:list)
+				{
+					out.write("<table class=table>");
+					out.write("<tr>");
+					out.write("<td class=text-left>");
+					out.write("◑"+rvo.getName()+"&nbsp;("+rvo.getDbday()+")");
+					out.write("</td>");
+					out.write("<td class=text-right>");
+					if(rvo.getId().equals(id))
+					{
+						out.write("<span class=\"btn btn-xs btn-success ups\" data-no="+rvo.getRno()+">수정</span>&nbsp;");
+						out.write("<a href=ReplyDeleteServlet?rno="+rvo.getRno()+"&type="+type+"&no="+no+" class=\"btn btn-xs btn-info\">삭제</a>");
+					}
+					out.write("</td>");
+					out.write("</tr>");
+					
+					out.write("<tr>");
+					out.write("<td colspan=2>");
+					out.write("<pre style=\"white-space:pre-wrap;backgorund-color:white;border:none\">"+rvo.getMsg()+"</pre>");
+					out.write("</td>");
+					out.write("</tr>");
+					
+					out.write("<tr id=m"+rvo.getRno()+" class=updates style=\"display:none\">");
+					out.write("<td colspan=2>");
+					
+					out.write("<form method=post action=ReplyUpdateServlet>");
+					out.write("<input type=hidden name=gno value="+rvo.getRno()+">");
+					out.write("<input type=hidden name=gno value="+no+">");
+					out.write("<input type=hidden name=typeno value="+type+">");
+					out.write("<textarea name=msg rows=4 cols=60 style=\"float:left\">"+rvo.getMsg()+"</textarea>");
+					out.write("<input type=submit value=\"댓글 수정\" style=\"width:100px;height:89px;background:blue;color:white\">");
+					out.write("</form>");
+					// 처리하는 서블릿(JSP) / 화면 출력 서블릿(JSP)
+					// => 화면이 없는 (HTML) => 자체에서 처리 
+					out.write("</td>");
+					out.write("</tr>");
+					out.write("</table>");
+				}
+				out.write("</td>");
+				out.write("</tr>");
+				out.write("</table>");
 		
 		//댓글 작성 
 		if(id!=null) // 로그인이 되었다면 3개의 값을 보냄  gno,typeno,내용
