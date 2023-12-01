@@ -1,0 +1,72 @@
+@charset "UTF-8";
+    /*.container{
+		margin-top:50px;
+	}
+	.row{
+		margin:0px auto;
+		width: 850px;
+	}*/
+	#image{
+		width: 100%;
+		height: 500px;
+    }
+    #title,#price{
+		font-size: 25px;
+		font-weight: bold;
+	}
+	#sub{
+		color:gray;
+	}
+	#percent{
+		font-size: 25px;
+		color:pink;
+		font-weight: bold;
+	}
+	#label{
+		font-size: 10px;
+		color: green;
+		font-weight: bold;
+	}
+	#price2{
+		font-size: 25px;
+		color: green;
+		font-weight: bold;
+	}
+	#star{
+		color: orange;
+		font-weight: bold;
+	}
+	#bold{
+		font-weight: bold;
+	}
+	#count{
+		color:gray
+	}
+	img[src*="delivery3"]{
+		width: 20px;
+		height: 20px;
+	}
+	#delevery{
+		color: gray;
+	}
+	#sel{
+		width: 100%;
+		height: 40px;
+	}
+	/* 공통으로 적용 */
+	#cart,#buy{
+		width: 220px;
+		height: 50px;
+		border: 2px green solid;
+		font-size: 20px;
+		font-weight: bold;
+		border-radius: 10px;
+	}
+	#cart{
+		background-color: white;
+		color: green;
+	}
+	#buy{
+		background-color: green;
+		color:white
+	}

@@ -1,0 +1,66 @@
+<!--
+	page 181 글꼴 / 글자 크기 
+	=> 글자 크기 : font-size=(px|em,pt)
+	   글자 형태 : font-weight:bold,i...
+	   글꼴 :  font-family:"맑은 고딕" 궁서체 바탕체...
+	   => 기타 : 외부 font (구글)
+	=> 색상 지정 
+	   color:지정된 색상 => red , blue...
+	   color:#FFF
+	   color:rgb(255,255,255)
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;500;600;700;800&display=swap" rel="stylesheet">
+<style type="text/css">
+	h1{
+		/*font-family: 궁서체 "맑은 고딕" 바탕체;
+		font-weight: bold;
+		font-style: italic;
+		color:rgb(154,228,201);*/
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	a{
+		font-family: 궁서체;
+		font-weight: bold;
+		color: black;
+		text-decoration: none;/* underline*/
+	}
+	a:hover{
+		color: cyan;
+		text-decoration: underline;
+	}
+	.a{
+	   color:orange;	
+	}
+	.b{
+		color:rgb(255,0,0)
+	}
+	.c{
+		color:#CCCCFF;
+	}
+	.d{
+		color:rgba(255,255,255,0.3)
+	}
+	.e{
+		color:#000;
+	}
+</style>
+</head>
+<body>
+  <h1>Hello CSS(font)</h1>
+  <a href="#">Click</a>
+  <h3 class="a">Hello CSS</h3>
+  <h3 class="b">Hello CSS</h3>
+  <h3 class="c">Hello CSS</h3>
+  <h3 class="d">Hello CSS</h3>
+  <h3 class="e">Hello CSS</h3>
+  
+  
+</body>
+</html>

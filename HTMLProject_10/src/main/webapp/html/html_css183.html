@@ -1,0 +1,71 @@
+<!--
+	  텍스트 관련 CSS
+	  => font-size , font-family , font-weight 
+	  => color 
+	  ***1. text-decoration: none,underline , overline 
+	     => 메뉴 , <a> 
+	  2. text-transform : none , uppercase , lowercase 
+	  3. text-shadow 
+	  ***5. white-space 
+	  6. letter-spacing 
+	  7. word-spacing 
+	  ***8. text-align : 정렬 => left/center/right
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	ul{
+		width: 700px;
+		background-color: #FC6;
+		color: black;
+	}
+	li{
+		width:auto;
+		list-style: none;
+		display: inline-block;
+		/*text-transform: uppercase;*/
+		/* 사용처 : 로고문자열 */
+		
+	}
+	a{
+		color:black;
+		text-decoration: none;
+		text-shadow: 5px 5px 3px #f00;
+	}
+	a:hover{
+		color:white;
+		text-decoration: overline;
+	}
+	table{
+		width:600px;
+	}
+	pre{
+		white-space: pre-wrap;/* 자동 줄바꿈*/
+		/*letter-spacing: 1.2em; 자간*/
+	}
+</style>
+</head>
+<body>
+  <ul>
+	  <li><a href="#">Home</a></li>
+	  <li><a href="#">Member</a></li>
+	  <li><a href="#">FreeBoard</a></li>
+	  <li><a href="#">Recommand</a></li>
+	  <li><a href="#">Mypage</a></li>
+  </ul>
+  <table>
+	  <tr>
+		  <td><pre>올 시즌 김하성이 기록한 38도루는 한국 메이저리거 최초의 기록이며, 15경기 연속 멀티 출루를 기록하여 일본 레전드 스즈키 이치로가 새운 동양인 메이저리거 기록과 타이를 이루는 등 뛰어난 활약을 펼쳤다.
+
+김하성은 수상소감으로 “올해 골드글러브를 받기까지 도움을 많이 받았다. 한번 받았기에 계속 받을 수 있도록 최선을 다하겠다”며 “혼자 수비 하이라이트를 보면서 뿌듯했다”며 좌중을 미소 짓게 했다.
+
+김하성은 후배들에 한 마디 부탁한다는 질문에 “김하성도 미국에서 뛰고 있으니까 후배들도 더 큰 꿈을 꾸고 도전했으면 한다”며 격려했다.
+
+김하성은 2024시즌 뒤에 프리에이전트(FA)가 된다. 그는 “내년은 내게 중요한 시즌이다. 그래서 열심히 운동하고 있다. 내년에도 좋은 경기로 기쁨을 드릴 수 있도록 최선을 다하겠다”고 다짐했다.</pre></td>
+	  </tr>
+  </table>
+</body>
+</html>
