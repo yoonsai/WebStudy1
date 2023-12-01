@@ -29,16 +29,16 @@ public class MainServlet extends HttpServlet {
 			name="GoodsAllServlet";
 			break;
 		case "2":
-			name="GoodsSpecialServlet";
+			name="GoodsSpecialServlet"; // 핫딜
 			break;
 		case "3":
-			name="GoodsBestServlet";
+			name="GoodsBestServlet"; // 베스트상품
 			break;
 		case "4":
-			name="GoodsNewServlet";
+			name="GoodsNewServlet"; // 신상품
 			break;
 		case "5":
-			name="GoodsDetailServlet";
+			name="GoodsDetailServlet"; 
 			break;
 		}
 		out.write("<html>");

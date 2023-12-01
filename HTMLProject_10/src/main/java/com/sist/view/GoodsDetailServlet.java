@@ -158,7 +158,7 @@ public class GoodsDetailServlet extends HttpServlet {
 					out.write("<td colspan=2>");
 					
 					out.write("<form method=post action=ReplyUpdateServlet>");
-					out.write("<input type=hidden name=gno value="+rvo.getRno()+">");
+					out.write("<input type=hidden name=rno value="+rvo.getRno()+">");
 					out.write("<input type=hidden name=gno value="+no+">");
 					out.write("<input type=hidden name=typeno value="+type+">");
 					out.write("<textarea name=msg rows=4 cols=60 style=\"float:left\">"+rvo.getMsg()+"</textarea>");

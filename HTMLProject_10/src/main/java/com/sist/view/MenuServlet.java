@@ -20,7 +20,7 @@ public class MenuServlet extends HttpServlet {
 		out.write("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">");
 		out.write("<style>");
 		out.write("a.menu{margin:30px 0px 0px 15px}");
-		//                       top  right bottom left
+		//                       top  right bottom left 
 		out.write("</style>");
 		out.write("</head>");
 		out.write("<body>");

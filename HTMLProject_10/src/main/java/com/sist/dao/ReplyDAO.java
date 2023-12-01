@@ -95,7 +95,25 @@ public class ReplyDAO {
 			}
 		}
 		//3. 수정
-		
+		public void replyUpdate(int rno, String msg)
+		{
+			try {
+				getConnection();
+				String sql="UPDATE reply SET "
+						+ "msg=? "
+						+ "WHERE rno=?";
+				ps=conn.prepareStatement(sql);
+				ps.setString(1, msg);
+				ps.setInt(2, rno);
+				ps.executeUpdate();
+				
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}finally {
+				disConnection();
+			}       
+		}
 		//4. 삭제
 		public void replyDelete(int rno)
 		{

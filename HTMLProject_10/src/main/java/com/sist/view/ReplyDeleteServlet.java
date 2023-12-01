@@ -20,7 +20,7 @@ public class ReplyDeleteServlet extends HttpServlet {
 		String no=request.getParameter("no");
 		// DAO연동
 		ReplyDAO dao=ReplyDAO.newInstance();
-		dao.replyDelete(Integer.parseInt(no));
+		dao.replyDelete(Integer.parseInt(rno));
 		// 화면이동
 		response.sendRedirect("MainServlet?mode=5&no="+no+"&type="+type);
 		

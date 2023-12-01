@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
 		out.write("<tr>");
 		out.write("<th width:20% class=\"text-center danger\">PW</th>");
 		out.write("<td width:80%>");
-		out.write("<input type=pssword name=pwd size=15 required>");
+		out.write("<input type=password name=pwd size=15 required>");
 		out.write("<td>");
 		out.write("</tr>");
 		
