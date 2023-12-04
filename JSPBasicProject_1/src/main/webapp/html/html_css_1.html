@@ -12,14 +12,43 @@
           = margin-right
           = margin-bottom
           = margin-left
+          = margin : 시계방향 => 
    -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	div{
+		width: 200px;
+		height: 100px;
+		background-color: blue;
+		border: 1px solid;
+	}
+	.box1{
+		margin:30px 50px 30px 50px;
+		background-color: yellow;
+	}
+	.box2{
+		margin:30px 50px;
+		background-color: rgb(0, 255, 0);
+		/*top right bottom left
+		  ====      ======
+		       ====       ====== 안쓰면 같은 값을 가져옴*/
+	}
+	.box3{
+		margin: 30px;
+	}
+	.box4{
+	
+	}
+</style>
 </head>
 <body>
-
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
 </body>
 </html>

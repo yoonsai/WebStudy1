@@ -1,0 +1,111 @@
+<!--
+	<table> 태그 해제
+	================
+	<table> : display:table
+    <tr> : display:table-row
+    <th> : display:table-column
+    <td> : display:table-cell
+    <caption> : display:table-caption
+		=> 회원가입/로그인
+	=> none, inline, inline-block, block
+	=> margin, padding, border
+	   ===============  ======= width, style, color
+	   => top, right, bottom, left
+	=> background => 170page
+	   배경색/배경이미지
+	   => background-color
+	   => background-image : 이미지 크기가 작으면 repeat
+	                         반복을 한다
+	   => background-size : default(원래 사이즈)
+	                        cover : 축소/확대
+	                        width,height지정
+	   => background-clip : 범위지정
+	   => background-position : 위치지정
+	   => 이미지 위에 문자 => 슬라이더
+	=> position => 메뉴, 지도
+	=> 반응형: @media
+	=> 라이브러리 : bootstrap
+    ==============================
+    javascript : 기본 문법
+                 함수
+                 이벤트
+                 내장객체
+    라이브러리 : jquery (Ajax) => 검색
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#wrapper{
+		border: 5px solid #FC9;
+		width: 500px;
+		margin-left: 150px;
+		border-radius: 10px;
+	}
+	#joinForm{
+		display: table;
+		margin:10px auto;
+		border-collapse: collapse;
+	}
+	#joinForm h1{
+		display: table-caption; /*table제목*/
+		font-size: 15px;
+		padding: 5px;
+		margin-top: 10px;
+		width: 450px;
+	}
+	#joinForm h1 span{
+		text-align: center;
+		color: white;
+		background-color: #333;
+		padding: 5px;
+		margin:0px auto;
+		
+	}
+	/*<tr>*/
+	#joinForm p{
+		display: table-row;
+		padding: 5px; /* top right bottom left => 5px씩 주겟다*/
+		border-bottom: 1px solid rgb(192, 192, 192);
+	}
+	#joinForm label{
+		display: table-cell;
+		padding-left: 10px;
+	}
+	#joinForm #userid{
+		width: 100px;
+	}
+	#joinForm #userpwd{
+		width: 80px;
+	}
+	#joinForm #username{
+		width: 100px;
+	}
+	#joinForm #cellstyle{
+		display: table-cell;
+		padding-left: 5px;
+	}
+</style>
+</head>
+<body>
+	<div id="wrapper">
+		<form id="joinForm">
+			<h1><span>회원가입</span></h1>
+			<p>
+				<label for="userid">ID</label>
+				<input type="text" name="id" id="userid" class="cell">
+			</p>
+			<p>
+				<label for="userpwd">Password</label>
+				<input type="password" name="pwd" id="userpwd" class="cell">
+			</p>
+			<p>
+				<label for="username">Name</label>
+				<input type="text" name="name" id="username" class="cell">
+			</p>
+		</form>
+	</div>
+</body>
+</html>
