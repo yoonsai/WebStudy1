@@ -37,6 +37,37 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>&lt;% 스크립트릿 %&gt;</h1>
+   <h3>구구단</h3>
+   <table border=1 width=700>
+      <tr>
+        <%
+            for(int i=2;i<=9;i++)
+            {
+        %>
+               <th><%= i+"단"  %></th>
+        <%       
+            }
+        %>
+      </tr>
+      <%
+           for(int i=1;i<=9;i++)
+           {
+        %>
+           <tr>
+        <%
+           for(int j=2;j<=9;j++)
+           {
+        %>
+              <td><%= j+"*"+i+"="+(j*i) %></td>
+       
+       <%
+           }
+       %>  
+           </tr>
+       <%
+           }
+       %>    
+   </table>
 </body>
 </html>
